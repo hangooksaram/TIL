@@ -29,3 +29,25 @@ mockFn.mockReturnValue("mock return value");
 ## jest.mock()
 
 - jest.fn() 함수 하나를 mocking 한다면, jest.mock() 은 모듈 내에 있는 모든 메서드와 함수를 mocking. Module mocking 을 좀 더 편하게 해줌.
+
+## Methods
+
+### mockResolvedValueOnce
+
+- `mockFn.mockResolvedValueOnce(value)`
+- 여러 비동기 호출에 대한 resolve 값을 지정해줌
+
+```js
+test("async test", async () => {
+  const asyncMock = jest
+    .fn()
+    .mockResolvedValue("default")
+    .mockResolvedValueOnce("first call")
+    .mockResolvedValueOnce("second call");
+
+  await asyncMock(); // first call
+  await asyncMock(); // second call
+  await asyncMock(); // default
+  await asyncMock(); // default
+});
+```
