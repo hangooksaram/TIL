@@ -28,3 +28,18 @@ new Object();
 - 비슷한 기능으로 `Object.seal` 메서드 가 있다.
   - 둘의 공통점은, 속성의 추가, 제거를 방지한다는 것.
   - 차이점은 `Object.seal` 메서드는 기존의 속성의 변경이 가능하다. 수정 을 시도하면 보통 조용히 실패한다고 한다. 하지만, 예외적으로 엄격 모드 일 때는 TypeError 가 발생한다고 한다.
+
+## Object.keys()
+
+- `Object.keys()` 메서드는 주어진 객체의 `key` 이름들을 열거할 수 있는 (iterable) 배열로 반환
+
+````js
+const object1 = {
+  a: "string",
+  b: 42,
+  c: false,
+};
+
+console.log(Object.keys(object1));
+// Array ["a", "b", "c"]```
+````
