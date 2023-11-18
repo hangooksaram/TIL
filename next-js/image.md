@@ -41,3 +41,18 @@
     },
   };
   ```
+
+  ## `width`
+
+- width, height 는 props 는 required 한 값이지만, style 로 직접 정의할 수 있다.
+  - e.g. width, height 의 값으로 퍼센트 나 "auto" 와 같이 지정하고 싶을때
+
+```javascript
+<Image src="/myImage.png" alt="myImage"/>
+// error
+
+<Image style=
+{{width : "100%", height: "auto"}} src="/myImage.png" alt="myImage"/>
+// error
+
+```
