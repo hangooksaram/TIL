@@ -42,17 +42,24 @@
   };
   ```
 
-  ## `width`
+## `width` , `height`
 
-- width, height 는 props 는 required 한 값이지만, style 로 직접 정의할 수 있다.
-  - e.g. width, height 의 값으로 퍼센트 나 "auto" 와 같이 지정하고 싶을때
+### props
 
-```javascript
-<Image src="/myImage.png" alt="myImage"/>
+- `next/image` 에서 `width`, `height` 는 `required` 한 `props` 이다.
+- `type` : px 값으로 변환 될 number 타입의 값만 전달이 가능하다.
+
+### 인라인 `style` 값 으로 직접 정의할 수 있다.
+
+- width, height 의 값을 고정된 px 값이 아닌 퍼센트 나 "auto" 와 같이 지정하고 싶을때 인라인 style 의 width 와 height 값을 지정할 수 있다.
+- 주의할 점은 이미지가 로컬에 저장되어 있는 이미지 일 경우 에 만 가능하다.
+
+```typescript
+<Image src="/myImage.png" alt="myImage" />;
 // error
 
-<Image style=
-{{width : "100%", height: "auto"}} src="/myImage.png" alt="myImage"/>
-// error
+import myImage from "../../public/images/myImage.png";
 
+<Image style={{ width: "100%", height: "auto" }} src={myImage} alt="myImage" />;
+// error
 ```
