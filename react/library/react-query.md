@@ -14,3 +14,8 @@
 
 - `staleTime` 만큼 (ms 가 단위) 데이터를 서버에 다시 fetch 하지 않음. 즉, staleTime 동안 해당 데이터는 fresh 한 상태인 것이고, staleTime 이 끝나면 해당 데이터는 stale 해지는 것.
   - e.g. 거의 동적이지 않아 정적인 데이터가 있다. -> staleTime 을 길게 설정하면 됨.
+
+## enabled
+
+- 이 값이 `true` 일 경우 useQuery 를 실행, `false` 일 경우 실행시키지 않음
+- `undefined` 일 경우 실행 됨
