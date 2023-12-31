@@ -7,3 +7,5 @@
   - 모든 패키지 업데이트
   - ![](/assets/images/ncuResult.png)
   - `ncu` : npm-check-update 라는 패키지
+- `npm ls`
+  - 설치 된 모든 패키지 정확한 버전 확인
