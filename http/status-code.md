@@ -18,3 +18,5 @@
 - 응답 조건
   - `GET` 이나 `HEAD` 요청 처럼 요청 방법이 안전할 경우
   - 요청이 조건부 헤더 (If-None-Match 또는 If-Modified-Since) 를 사용할 경우
+
+https://www.rfc-editor.org/rfc/rfc9110#status.304
