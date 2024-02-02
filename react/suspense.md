@@ -25,3 +25,7 @@
 
 - 핵심 원리는 **하위 컴포넌트 에서 Promise 를 throw 하는 것** 이다.
 - 하위 컴포넌트 에서 처리하는 비동기 로직의 `Promise` 상태가 `pending`, `error` 상태이면, 상위로 `Promise` 를 다시 Throw 한다.
+
+https://codesandbox.io/p/sandbox/react-custom-suspense-forked-f52xd9?file=%2Fsrc%2FSuspense.tsx%3A42%2C18-42%2C23
+
+https://velog.io/@seeh_h/suspense%EC%9D%98-%EB%8F%99%EC%9E%91%EC%9B%90%EB%A6%AC
