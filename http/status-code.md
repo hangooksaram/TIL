@@ -20,3 +20,9 @@
   - 요청이 조건부 헤더 (If-None-Match 또는 If-Modified-Since) 를 사용할 경우
 
 https://www.rfc-editor.org/rfc/rfc9110#status.304
+
+## 405 Method Not Allowed
+
+- 서버가 요청 메서드를 알고 있지만 대상 리소스가 이 메서드를 지원하지 않음 을 나타냄.
+
+- 서버는 405 코드를 응답할 경우 반드시 Allow 헤더 필드를 생성해야 하며, 이 필드에는 반드시 현재 대상 리소스에서 지원하는 메서드의 리스트가 들어있어야 함.
