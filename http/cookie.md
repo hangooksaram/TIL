@@ -34,3 +34,7 @@ Reference
 - https://developer.mozilla.org/ko/docs/Web/HTTP/Cookies#%EB%B3%B4%EC%95%88
 
 - https://www.youtube.com/watch?v=VOmIplFAGeg
+
+## withCredentials
+
+- 쿠키가 담긴 Http 요청을 보낼때 헤더에 해당 옵션을 함께 전송해야한다.
