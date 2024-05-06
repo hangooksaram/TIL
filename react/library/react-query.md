@@ -19,3 +19,35 @@
 
 - 이 값이 `true` 일 경우 useQuery 를 실행, `false` 일 경우 실행시키지 않음
 - `undefined` 일 경우 실행 됨
+
+### **defaults**
+
+- 기본적으로 `staleTime` 은 0 으로 설정 되어있다. 즉, 모든 데이터가 fresh 하다고 여겨, 매 요청마다 실제로 서버에 요청.
+
+> 쿼리는 선언형이다.
+
+**React Query**를 처음 사용하는 사람들은 **refetch**에 대해 명령형으로 실행 하고자 하는데 잘못된 방법이다. **React Query**에서 강조되는 아주 중요한 개념이다.
+
+쿼리가 있고 데이터를 가져오고자 한다. 이제 버튼을 클릭하여 필터링 된 데이터를 다시 가져오고 싶지만 파라미터가 다르다. 일반적으로는 다음과 같이 작성한다.
+
+```tsx
+function Component() {
+  const { data, refetch } = useQuery(['todos'], fetchTodos)
+
+  // ❓ 필터 정보를 넘길 수가 없다 ❓
+  return <Filters *onApply*={() => refetch(???)} />}
+```
+
+위 예시에서 필터된 데이터를 가져올 방법은 무엇일까? 정답은 **불가능하다.**
+
+**refetching**을 위한 것이지 데이터를 변경하기 위한 쿼리가 아니다.
+
+데이터를 변경 하는 **state**가 있는 경우 **Key**가 변경 될 때 마다 **React Query**가 트리거 되어 자동으로 **refetching**하기 때문에 우리는 **Key**에 저장하기만 하면 된다. 필터를 적용하려면 **state**를 변경 시키면 된다.
+
+```tsx
+function Component() {
+  const [filters, setFilters] = React.useState()
+  const { data } = useQuery(['todos', filters], fetchTodos)
+
+  return <Filters *onApply*={setFilters} />}
+```
