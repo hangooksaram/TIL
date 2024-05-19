@@ -3,6 +3,7 @@
 - `children`(하위 컴포넌트) 의 `loading` 이 완료 될 때 까지, `fallback` UI 를 제공한다.
   - `children` : 렌더링 하고 싶은 실질적 UI
   - `fallback` : loading 이 완료 될때까지만 보여줄 대체 UI
+- 로딩 화면을 선언적으로 나타낼 수 있다는 것에도 의미가 있다.
 
 ```jsx
 <Suspense fallback={fallback}>{children}</Suspense>
