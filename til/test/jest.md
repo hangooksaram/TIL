@@ -50,7 +50,7 @@ test("async test", async () => {
     .mockResolvedValue("default")
     .mockResolvedValueOnce("first call")
     .mockResolvedValueOnce("second call");
-
+x
   await asyncMock(); // first call
   await asyncMock(); // second call
   await asyncMock(); // default
