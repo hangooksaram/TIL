@@ -15,3 +15,8 @@ npm i vercel
 ```
 vercel deploy (or vercel)
 ```
+
+## Build Configuration
+## Output Directory
+https://vercel.com/docs/deployments/configure-a-build#output-directory
+- 해당 디렉토리 내부의 에셋들만 제공된다.
