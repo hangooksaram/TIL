@@ -13,13 +13,35 @@
 - `static` 
     - `path` : 해당 디렉토리 하위의 에셋들만 제공
 
+## Entry Points
+- `dependOn` : 현재 엔트리 포인트가 의존하는 엔트리 포인트. 이 엔트리 포인트를 로드하기 전에 로드해야 하는 엔트리 포인트.
+  - entry points 를 여러개로 나누었는 데, 동작하지 않는 부분이 있다면, 이부분을 의심해볼 수 있다.
+    
+    e.g.
+      ```tsx
+      // index.ts
+      import someModule from './someModule.ts';
+      ```
+
+      ```js
+      // webpack.config.js
+      module.exports = {
+      entry: [
+          index: "./src/index.ts",
+          someModule: { 
+            dependOn: "index", 
+            import: "./someModule.ts" 
+          },
+        ]
+      }
+      ```
 
 
-### 로더(Loader)
+## 로더(Loader)
 로더(Loader) 는 웹팩이 웹 애플리케이션을 해석할 때 자바스크립트 파일이 아닌 웹 자원(HTML, CSS, Images, 폰트 등)들을 변환할 수 있도록 도와주는 속성입니다.
 
 
-### CSS
+## CSS
 Production build 에서는 development 빌드에서 사용하는 style-loader 를 사용하여, `<script>` 의 `<head>` 에 `<style>` 내에  모든 css 를 삽입하는 방식을 사용할 수 없다.
 
 따라서 css 파일을 새롭게 생성하는 방식이 필요한데, 이를 위해 MiniCssExtractPlugin 플러그인이 필요함. 
