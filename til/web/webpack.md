@@ -72,3 +72,12 @@ module.exports = {
 ## Optimization
 - CSS : `CssMinimizerPlugin`
 - Image : https://webpack.kr/plugins/image-minimizer-webpack-plugin/#root
+
+## Image
+- webpack5 이상 부터는 이미지를 처리할 때, file-loader 와 같은 로더가 따로 필요하지 않다.
+  - 하지만 img 태그 의 src 로 이미지를 불러오는 경우, html-loader 를 추가해주어야한다.
+
+
+## Font
+- image 를 처리할때와 마찬가지로, webpack5 부터는 loader 가 따로 필요하지 않다.
+  

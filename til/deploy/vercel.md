@@ -20,3 +20,8 @@ vercel deploy (or vercel)
 ## Output Directory
 https://vercel.com/docs/deployments/configure-a-build#output-directory
 - 해당 디렉토리 내부의 에셋들만 제공된다.
+
+
+## Webpack
+- font directory path 찾지 못하는 이슈
+   - font-face 의 url 을 절대경로로하니 찾지 못하는 듯하다. 상대경로로 바꿔주니 찾는 듯
