@@ -9,8 +9,7 @@
 - 원인으로는 보통 
     - 부정확한 html tag 중첩
     - browser-only api 들 (e.g. localStorage) 을 사용하는 경우
-    - Date() 를 사용하는 경우 
-   등이 있다
+    - Date() 를 사용하는 경우 등이 있다
  
 ## in React
 - 사전에 만들어진 HTML로 그려진 브라우저 DOM 노드 내부에 React 컴포넌트를 렌더링
