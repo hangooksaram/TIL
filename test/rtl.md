@@ -26,13 +26,15 @@ import useCustomHook from '@/hooks/useCustomHook'
 
 test("custom hook works properly", ()=> {
   const result = renderHook(()=> useCustomHook());
-  
 })
 ```
 
 ### 독립된 환경에서 실행
 - renderHook 은 hook 그 자체를 테스트 하는 용도. 해당 hook 이 사용되는 컴포넌트 혹은 페이지 에서의 프로세스를 테스트 하는 것은 불가능 하다. ([React Hook testing with renderHook](https://stackoverflow.com/questions/64287448/react-hook-testing-with-renderhook))
 > *Renders a test component that will call the provided callback, including any hooks it calls, every time it renders.*
+
+### 상태가 변경되었을 때
+- 상태가 변경되는 것이 예상된다면 `result.current` 로 **항상 최신값을 참조할 수 있도록 유의해야한다.**
 
 
 # `Setup`
