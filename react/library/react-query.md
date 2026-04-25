@@ -59,3 +59,13 @@ function Component() {
 
   return <Filters *onApply*={setFilters} />}
 ```
+
+## `invalidateQueries`
+
+- 캐시를 stale 상태로 만들어 refetch를 트리거하는 함수
+
+### 동작 흐름
+
+- `invalidateQueries` 호출 → 해당 키의 캐시를 `stale` 상태로 마킹
+  1.  현재 구독 중인 컴포넌트 있으면 → 즉시 **background 에서 refetch**
+  2.  구독 중인 컴포넌트 없으면 → 다음 마운트 시 refetch
